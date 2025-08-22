@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+</head>
+<body>
+    <div id="gitalk-container"></div>
+    
+    <script>
+        // Gitalk 配置
+        const gitalk = new Gitalk({
+            clientID: 'YOUR_GITHUB_CLIENT_ID',        // GitHub Application Client ID
+            clientSecret: 'YOUR_GITHUB_CLIENT_SECRET', // GitHub Application Client Secret
+            repo: 'YOUR_REPO_NAME',                    // 存储评论的仓库名
+            owner: 'YOUR_GITHUB_USERNAME',             // 仓库所有者
+            admin: ['YOUR_GITHUB_USERNAME'],           // 管理员用户名数组
+            id: location.pathname,                      // 页面的唯一标识
+            distractionFreeMode: false,                // 是否启用无干扰模式
+            language: 'zh-CN',                         // 语言设置
+            perPage: 10,                               // 每页评论数
+            pagerDirection: 'last',                    // 分页方向
+            createIssueManually: false,                // 是否手动创建Issue
+            proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
+            // 代理地址，解决CORS问题
+        });
+        
+        gitalk.render('gitalk-container');
+    </script>
+</body>
+</html>
