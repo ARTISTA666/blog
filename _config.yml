@@ -13,13 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-# ⚠️ 重要：请将下面的URL替换为您的实际GitHub信息
-# 格式：https://您的GitHub用户名.github.io/仓库名
-# 示例：如果用户名是johndoe，仓库名是my-blog，则为：
-# url: https://johndoe.github.io/my-blog
-# root: /my-blog/
-url: https://ARTISTA666.github.io/blog
-root: /blog/
+url: https://my-blog.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -117,11 +111,8 @@ theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-# 注意：如果使用GitHub Actions部署，这个配置可以为空
-# 手动部署时才需要配置
 deploy:
-  type: ''
-  # 手动部署时的配置示例：
-  # type: git
-  # repo: https://github.com/USERNAME/REPO_NAME.git
-  # branch: gh-pages
+  type: git
+  repo: https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git
+  branch: main
+  message: "Updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
